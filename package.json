@@ -1,0 +1,62 @@
+{
+  "name": "graphql-todo",
+  "version": "1.0.0",
+  "description": "graphql tot",
+  "main": "index.js",
+  "nodemonConfig": {
+    "restartable": "rs",
+    "ignore": [
+      ".git",
+      "node_modules/",
+      "dist/",
+      "coverage/"
+    ],
+    "watch": [
+      "server"
+    ],
+    "exec": "yarn nmodexec",
+    "execMap": {
+      "ts": "node -r ts-node/register"
+    },
+    "env": {
+      "NODE_ENV": "development"
+    },
+    "ext": "js,json,ts"
+  },
+  "scripts": {
+    "server": "nodemon",
+    "nmodexec": " clear && babel-node src/server.js --presets es2015,stage-2",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "app": "react-scripts start",
+    "app-build": "react-scripts build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deevo-sage/graphql-todo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deevo-sage/graphql-todo/issues"
+  },
+  "homepage": "https://github.com/deevo-sage/graphql-todo#readme",
+  "dependencies": {
+    "@reach/router": "^1.3.4",
+    "apollo-client": "^2.6.10",
+    "apollo-link": "^1.2.14",
+    "apollo-link-context": "^1.0.20",
+    "apollo-link-http": "^1.5.17",
+    "apollo-server": "^2.24.0",
+    "babel": "^6.23.0",
+    "babel-node": "^0.0.1-security",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "bcrypt": "^5.0.1",
+    "graphql": "^15.5.0",
+    "graphql-tag": "^2.12.4",
+    "node-sass": "^6.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^4.0.3"
+  }
+}
