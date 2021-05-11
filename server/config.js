@@ -1,4 +1,5 @@
+import dotenv from "dotenv";
+dotenv.config();
 export default {
-  db:
-   process.env.DATABASE,
+  db: process.env.DATABASE,
 };
