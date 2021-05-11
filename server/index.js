@@ -1,12 +1,12 @@
 import { ApolloServer } from "apollo-server";
 import mongodb from "mongoose";
-import config from "./config";
 import { resolvers } from "./resolvers";
 import { AuthorizationDirective, typeDefs } from "./typedefs";
-import Usermodel from "./models/user";
 import { getUserFromToken } from "./auth";
+import dotenv from "dotenv";
+dotenv.config();
 mongodb.connect(
-  config.db,
+  process.env.DATABASE,
   {
     useUnifiedTopology: true,
     useNewUrlParser: true,
