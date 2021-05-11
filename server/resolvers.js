@@ -13,7 +13,9 @@ export const resolvers = {
       return user;
     },
     tasks: async (_, input, { user }, __) => {
-      const tasks = await Taskmodel.find({ _id: { $in: user.tasks } });
+      const tasks = await Taskmodel.find({ _id: { $in: user.tasks } })
+        .sort({ created_at: -1 })
+        .exec();
       return tasks;
     },
   },
