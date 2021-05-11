@@ -10,11 +10,12 @@ export const resolvers = {
       return users;
     },
     user: async (_, input, { user }, info) => {
- 
       return user;
     },
-    task: async () => {},
-    tasks: async () => {},
+    tasks: async (_, input, { user }, __) => {
+      const tasks = await Taskmodel.find({ _id: { $in: user.tasks } });
+      return tasks;
+    },
   },
   Mutation: {
     signin: async (_, { email, password }) => {
@@ -53,8 +54,9 @@ export const resolvers = {
   },
   User: {
     tasks: async (user) => {
-      const tasks = await Taskmodel.find({ _id: { $in: user.tasks } });
-
+      const tasks = await Taskmodel.find({ _id: { $in: user.tasks } })
+        .sort({ created_at: -1 })
+        .exec();
       return tasks;
     },
   },
