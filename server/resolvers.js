@@ -13,7 +13,14 @@ export const resolvers = {
       return user;
     },
     task: async () => {},
-    tasks: async () => {},
+    tasks: async (_, { id, status }, { user }) => {
+      const tasks = await Taskmodel.find({ _id: { $in: user.tasks } })
+        .sort({
+          created_at: -1,
+        })
+        .exec();
+      return tasks;
+    },
   },
   Mutation: {
     signin: async (_, { email, password }) => {
