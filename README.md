@@ -26,8 +26,6 @@
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
-    "bcrypt": "^5.0.1",
-    "bcryptjs": "^2.4.3",
     "graphql": "^15.5.0",
     "graphql-tag": "^2.12.4",
     "jsonwebtoken": "^8.5.1",
@@ -37,6 +35,5 @@
     "parcel": "^2.0.0-beta.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "^4.0.3"
 ```
 
