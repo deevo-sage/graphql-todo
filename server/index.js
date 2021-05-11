@@ -3,8 +3,7 @@ import mongodb from "mongoose";
 import { resolvers } from "./resolvers";
 import { AuthorizationDirective, typeDefs } from "./typedefs";
 import { getUserFromToken } from "./auth";
-import dotenv from "dotenv";
-dotenv.config();
+
 mongodb.connect(
   process.env.DATABASE,
   {
