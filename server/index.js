@@ -1,9 +1,9 @@
-import config from "./config";
 import { ApolloServer } from "apollo-server";
 import mongodb from "mongoose";
 import { resolvers } from "./resolvers";
 import { AuthorizationDirective, typeDefs } from "./typedefs";
 import { getUserFromToken } from "./auth";
+import config from "./config";
 mongodb.connect(
   config.db,
   {
